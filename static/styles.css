@@ -1,0 +1,64 @@
+/* styles.css */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('/static/basketball-background-hd.jpg'); /* Use a relative path from the static folder */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.form-label{
+    color: black;
+}
+
+.container {
+    text-align: center;
+    margin-top: -100px;
+}
+
+.container h1 {
+    color: black; /* Set the desired text color */
+}
+
+.nav-link {
+    color: blue; /* Set the color for navigation links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Flash messages */
+ul.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul.flashes li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Success flash message */
+ul.flashes li.success {
+    background-color: #28a745;
+    color: black;
+}
+
+/* Error flash message */
+ul.flashes li.error {
+    background-color: #dc3545;
+    color: black;
+}
