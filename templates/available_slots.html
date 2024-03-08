@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Slots</title>
+</head>
+<body>
+    <h1>Available Slots for Today</h1>
+    <ul>
+        {% for slot in available_slots %}
+            <li>{{ slot.time_slot }} - {{ slot.status }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

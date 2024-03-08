@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Turf Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Football Turf Booking System</h1>
+        <nav>
+            <ul>
+                <li><a class="nav-link" href="{{ url_for('available_slots') }}">View Available Slots</a></li>
+                <li><a class="nav-link" href="{{ url_for('book_slot') }}">Book a Slot</a></li>
+                <li><a class="nav-link" href="{{ url_for('my_bookings') }}">View My Bookings</a></li>
+                {% if current_user.is_authenticated %}
+                    <li><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

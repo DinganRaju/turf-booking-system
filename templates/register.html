@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('/static/basketball-background-hd.jpg'); /* Use a relative path from the static folder */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif; /* Change the font family as needed */
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+            margin-bottom: 400px; 
+            margin-right: -230px;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px; /* Adjust the width of the form */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-top: 15px;
+            color: #007BFF;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline the link on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="post" action="{{ url_for('register') }}">
+        {{ form.hidden_tag() }}
+
+        <label for="username">Username:</label>
+        {{ form.username(class="form-control") }}
+        {% for error in form.username.errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
+        <label for="password">Password:</label>
+        {{ form.password(class="form-control") }}
+        {% for error in form.password.errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
+        <label for="confirm_password">Confirm Password:</label>
+        {{ form.confirm_password(class="form-control") }}
+        {% for error in form.confirm_password.errors %}
+            <p class="error-message">{{ error }}</p>
+        {% endfor %}
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+</body>
+</html>

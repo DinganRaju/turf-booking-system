@@ -1,0 +1,30 @@
+<!-- book_slot.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Slot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Book a Slot</h1>
+        <form method="post" action="{{ url_for('book_slot') }}">
+            <label class="form-label" for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <label class="form-label" for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+
+            <label class="form-label" for="start_time">Start Time:</label>
+            <input type="time" id="start_time" name="start_time" required><br>
+
+            <label class="form-label" for="end_time">End Time:</label>
+            <input type="time" id="end_time" name="end_time" required><br>
+
+            <input type="submit" value="Book">
+        </form>
+    </div>
+</body>
+</html>
